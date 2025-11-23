@@ -52,7 +52,6 @@ main {
     padding-top: 0;
     padding: 0;
     width: 100%;
-
 }
 
 /* h1,
