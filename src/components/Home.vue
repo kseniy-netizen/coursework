@@ -1,4 +1,7 @@
-<script setup>
+<script>
+export default {
+    name: 'App'
+}
 // Вставляем это для этого: <script setup> — это синтаксический сахар для Composition API в Vue 3.
 // Он позволяет писать логику компонента прямо в <script> без необходимости возвращать свойства.
 // Для простых статических страниц, как эта, может быть пустым.
@@ -9,39 +12,43 @@
         <!-- Hero Section с изображением и текстом -->
         <section class="hero-section">
             <!-- Предполагаем, что у вас есть изображение в src/assets/hero-bg.jpg -->
-            <img src="../assets/Group 363.png" alt="Capture Studio Hero Background" class="hero-image">
-            <div class="hero-content">
-                <p class="studio-tagline">Студия фото и видеосъёмки</p>
+            <p class="hero-heading">Capture Studio</p>
+            <img src="../assets/images/girl.png" alt="Capture Studio Hero Background" class="hero-image">
+            <div class="p-content">
+                <p class="studio-tagline">Услуги фото и видеосъёмки</p>
             </div>
         </section>
 
-        <!-- Секция "О нас" или вводный текст -->
-        <section class="about-section page-section">
-            <p>
-                Фотография – это искусство останавливать время, позволяющее вам вновь и вновь переживать самые
-                счастливые моменты вашей жизни. Мы верим, что каждый человек уникален, и каждый момент особенен.
-            </p>
-            <p>
-                Мы стремимся запечатлеть вашу индивидуальность и сохранить ваши самые ценные воспоминания в уникальных и
-                неповторимых фотографиях. Мы создаем не просто изображения, а настоящие истории, которые будут радовать
-                вас и ваших близких долгие годы. Позвольте нам стать частью вашей истории!
-            </p>
-        </section>
-
-        <!-- Можно добавить секцию с примерами работ или призывами к действию -->
-        <section class="call-to-action page-section">
-            <h3>Наши услуги включают:</h3>
-            <ul>
-                <li>Профессиональные фотосессии (портретные, семейные, свадебные)</li>
-                <li>Создание рекламных и корпоративных видео</li>
-                <li>Аэросъемка с дрона</li>
-                <li>Репортажная съемка событий</li>
-            </ul>
-            <p>
-                <router-link to="/photos" class="btn">Посмотреть фото</router-link>
-                <router-link to="/video" class="btn">Посмотреть видео</router-link>
-            </p>
-        </section>
+        <main class="main">
+            <section class="hero">
+                <div class="hero-container">
+                    <div class="hero-text">
+                        <img src="/src/assets/icons/points.svg" alt="Три точки">
+                        <p class="hero-text">
+                            ФОТОГРАФИЯ – ЭТО ИСКУССТВО ОСТАНАВЛИВАТЬ ВРЕМЯ, ПОЗВОЛЯЮЩЕЕ ВАМ ВНОВЬ И ВНОВЬ ПЕРЕЖИВАТЬ
+                            САМЫЕ СЧАСТЛИВЫЕ МОМЕНТЫ ВАШЕЙ ЖИЗНИ. МЫ ВЕРИМ, ЧТО КАЖДЫЙ ЧЕЛОВЕК УНИКАЛЕН,
+                            И КАЖДЫЙ МОМЕНТ ОСОБЕНЕН.
+                        </p>
+                        <p class="hero-text">
+                            МЫ СТРЕМИМСЯ ЗАПЕЧАТЛЯТЬ ВАШУ ИНДИВИДУАЛЬНОСТЬ И СОХРАНИТЬ ВАШИ САМЫЕ ЦЕННЫЕ
+                            ВОСПОМИНАНИЯ В УНИКАЛЬНЫХ И НЕПОВТОРИМЫХ ФОТОГРАФИЯХ. МЫ СОЗДАЕМ НЕ ПРОСТО
+                            ИЗОБРАЖЕНИЯ, А НАСТОЯЩИЕ ИСТОРИИ, КОТОРЫЕ БУДУТ РАДОВАТЬ ВАС И ВАШИХ БЛИЗКИХ
+                            ДОЛГИЕ ГОДЫ. ПОЗВОЛЬТЕ НАМ СТАТЬ ЧАСТЬЮ ВАШЕЙ ИСТОРИИ!
+                        </p>
+                        <img src="/src/assets/icons/points.svg" alt="Три точки">
+                    </div>
+                </div>
+            </section>
+            <section class="cta">
+                <div class="container">
+                    <h2>Выберите интересующий Вас раздел:</h2>
+                    <div class="cta-buttons">
+                        <button class="cta-button">Фотосъёмка</button>
+                        <button class="cta-button">Видеосъёмка</button>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 </template>
 
@@ -50,9 +57,10 @@
 /* Вставляем это для этого: <style scoped> — это CSS-стили, которые применяются только к этому компоненту.
    Это помогает избежать конфликтов стилей между разными компонентами. */
    
-.home-page {
-    text-align: center;
-        color: #333;
+    * {
+      margin: 0;
+       padding: 0;
+       box-sizing: border-box;
     }
     
     .hero-section {
@@ -68,7 +76,14 @@
         color: white;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
-    
+
+
+    .hero-heading{
+    font-size: 1.8em;
+
+
+    }
+
     .hero-image {
         position: absolute;
         top: 0;
@@ -82,7 +97,7 @@
         z-index: 1;
     }
     
-    .hero-content {
+    .p-content {
         position: relative;
         z-index: 2;
         /* Поверх изображения */
@@ -96,6 +111,7 @@
     .studio-tagline {
         font-size: 1.8em;
         margin-top: 110px;
+        margin-left: 10px;
         font-weight: 300;
         letter-spacing: 1px;
     }
@@ -120,34 +136,66 @@
         line-height: 1.8;
         margin-bottom: 15px;
     }
+
+        .hero {
+            color: rgb(0, 0, 0);
+            padding: 4rem 0;
+        }
+        
+        .hero-text {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-text img{
+            padding: 35px 0px;
+        }
     
-    .page-section ul {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 20px;
-    }
+        .cta {
+            padding: 4rem 0;
+            text-align: center;
+        }
     
-    .page-section ul li {
-        background-color: #f9f9f9;
-        margin-bottom: 10px;
-        padding: 10px 15px;
-        border-left: 4px solid #f0a500;
-        border-radius: 4px;
-    }
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #000000;
+        }
     
-    .btn {
-        display: inline-block;
-        background-color: #f0a500;
-        color: white;
-        padding: 12px 25px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-        margin: 10px;
-        transition: background-color 0.3s ease;
-    }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
     
-    .btn:hover {
-        background-color: #e49400;
-    }
+    
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+    
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+    
+            .hero-text {
+                font-size: 1rem;
+            }
+    
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
 </style>
