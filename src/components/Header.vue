@@ -1,7 +1,7 @@
 <template>
     <header class="site-header">
         <!-- Левый блок - название студии -->
-        <div class="studio-name">Студия фото и видеосъёмки</div>
+        <div class="studio-name">Capture Studio</div>
 
         <!-- Центральный блок - основная навигация -->
         <nav class="main-nav">
