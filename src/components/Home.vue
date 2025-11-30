@@ -11,11 +11,10 @@ export default {
     <div class="home-page">
         <!-- Hero Section с изображением и текстом -->
         <section class="hero-section">
-            <!-- Предполагаем, что у вас есть изображение в src/assets/hero-bg.jpg -->
             <p class="hero-heading">Capture Studio</p>
             <img src="../assets/images/girl.png" alt="Capture Studio Hero Background" class="hero-image">
             <div class="p-content">
-                <p class="studio-tagline">Услуги фото и видеосъёмки</p>
+                <!-- <p class="studio-tagline">Услуги фото и видеосъёмки</p> -->
             </div>
         </section>
 
@@ -72,7 +71,6 @@ export default {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        /* Выравнивание по левому краю */
         color: white;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
