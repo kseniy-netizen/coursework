@@ -1,22 +1,18 @@
 <template>
-    <header class="site-header">
-        <!-- Левый блок - название студии -->
-        <div class="studio-name">Capture Studio</div>
+    <header class="header">
+        <div class="brand">Capture Studio</div>
 
-        <!-- Центральный блок - основная навигация -->
-        <nav class="main-nav">
+        <nav class="nav">
+            <router-link to="/sections">Разделы</router-link>
             <router-link to="/specialists">Специалисты</router-link>
-            <router-link to="/best">Лучшие работы</router-link>
+            <router-link to="/best" class="nowrap">Лучшие работы</router-link>
             <router-link to="/pric">Тарифы</router-link>
         </nav>
 
-        <!-- Правый блок - избранное и вход -->
-        <nav class="right-nav">
-            <router-link to="/favourites" class="favourite-link">
-                <span class="heart">🤍</span>
-            </router-link>
-            <router-link to="/enter" class="enter">ВОЙТИ</router-link>
-        </nav>
+        <div class="actions">
+            <router-link to="/favourites" class="fav">🤍</router-link>
+            <router-link to="/enter" class="btn">ВОЙТИ</router-link>
+        </div>
     </header>
 </template>
 
@@ -25,47 +21,52 @@ export default { name: 'Header' }
 </script>
 
 <style scoped>
-.site-header {
+.header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 20px 100px;
-    background-color: #252525;
-    color: #fff;
+    background: #252525;
+    color: white;
     font-family: Arial, sans-serif;
-    position: relative;
 }
 
-.studio-name {
+.brand {
     font-size: 16px;
-    color: #fff;
     font-weight: normal;
     flex: 1;
+    white-space: nowrap;
 }
 
-.main-nav {
+.nav {
     display: flex;
     gap: 40px;
     flex: 1;
     justify-content: center;
 }
 
-.main-nav a {
+.nav a {
     font-size: 16px;
-    color: #fff;
+    color: white;
     text-decoration: none;
     transition: color 0.3s;
+    white-space: nowrap;
 }
 
-.main-nav a:hover {
-    color: #cccccc;
+.nav a:hover {
+    color: #ccc;
 }
 
-.main-nav a.router-link-active {
+.nav a.router-link-active {
     font-weight: bold;
 }
 
-.right-nav {
+.nav a.nowrap {
+    flex-shrink: 0;
+    min-width: max-content;
+}
+
+.actions {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -73,47 +74,106 @@ export default { name: 'Header' }
     justify-content: flex-end;
 }
 
-.favourite-link {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+.fav {
+        font-size: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            transition: color 0.3s;
+            display: inline-block;
+            line-height: 1;
 }
 
-.heart {
-    font-size: 24px;
-    display: inline-block;
-    line-height: 1;
-    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
-}
-
-.enter {
+.btn {
     font-size: 14px;
-    color: #fff;
+    color: white;
     text-decoration: none;
     border: 1px solid white;
     border-radius: 20px;
     padding: 8px 20px;
-    transition: all 0.3s;
+    transition: 0.3s;
+    white-space: nowrap;
 }
 
-.enter:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.btn:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    .site-header {
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 15px;
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .header {
+        padding: 20px 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 20px 40px;
     }
 
-    .main-nav {
+    .nav {
         gap: 20px;
     }
 
-    .right-nav {
-        justify-content: center;
+    .nav a {
+        font-size: 15px;
     }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .brand,
+    .nav,
+    .actions {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+
+    .nav a.nowrap {
+        font-size: 13.5px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 6px 15px;
+    }
+
+    .fav {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        gap: 10px;
+    }
+
+    .nav a {
+        font-size: 13px;
+    }
+
+    .nav a.nowrap {
+        font-size: 12.5px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+
 }
 </style>

@@ -5,6 +5,49 @@ export default {
 // Вставляем это для этого: <script setup> — это синтаксический сахар для Composition API в Vue 3.
 // Он позволяет писать логику компонента прямо в <script> без необходимости возвращать свойства.
 // Для простых статических страниц, как эта, может быть пустым.
+
+
+
+// Vue.createApp({
+//     data() {
+//         return {
+//             selectedSection: null
+//         }
+//     }
+// }).mount('#app');
+
+
+
+
+// createApp({
+//     data() {
+//         return {
+//             selectedSection: null
+//         }
+//     },
+//     methods: {
+//         selectSection(section) {
+//             this.selectedSection = section;
+//             // Дополнительная логика при выборе раздела
+//             console.log('Выбран раздел:', section);
+
+//             // Можно добавить навигацию или другие действия
+//             if (section === 'photo') {
+//                 // Переход к разделу фотосъёмки
+//                 window.location.href = '#photo-section';
+//             } else if (section === 'video') {
+//                 // Переход к разделу видеосъёмки
+//                 window.location.href = '#video-section';
+//             }
+//         }
+//     },
+//     mounted() {
+//         // Инициализация при загрузке
+//         console.log('Компонент загружен');
+//     }
+// }).mount('#app');
+
+
 </script>
 
 <template>
@@ -42,8 +85,14 @@ export default {
                 <div class="container">
                     <h2>Выберите интересующий Вас раздел:</h2>
                     <div class="cta-buttons">
-                        <button class="cta-button">Фотосъёмка</button>
-                        <button class="cta-button">Видеосъёмка</button>
+                        <button class="cta-button" :class="{ active: selectedSection === 'photo' }"
+                            @click="selectedSection = 'photo'">
+                            Фотосъёмка
+                        </button>
+                        <button class="cta-button" :class="{ active: selectedSection === 'video' }"
+                            @click="selectedSection = 'video'">
+                            Видеосъёмка
+                        </button>
                     </div>
                 </div>
             </section>
@@ -75,12 +124,6 @@ export default {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
-
-    .hero-heading{
-    font-size: 1.8em;
-
-
-    }
 
     .hero-image {
         position: absolute;
@@ -137,39 +180,62 @@ export default {
 
         .hero {
             color: rgb(0, 0, 0);
-            padding: 4rem 0;
+            padding: 3rem 0;
         }
         
         .hero-text {
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
             text-align: center;
-            max-width: 800px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
         }
         .hero-text img{
             padding: 35px 0px;
         }
-    
-        .cta {
-            padding: 4rem 0;
-            text-align: center;
-        }
-    
-        .cta h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: #000000;
-        }
-    
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-    
+                .cta {
+                    text-align: center;
+                    padding: 20px;
+                }
+        
+                .cta h2 {
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
+                    color: #000000;
+                    line-height: 1.4;
+                    max-width: 450px;
+                    text-align: center;
+                }
+        
+                .cta-buttons {
+                    display: flex;
+                    justify-content: center;
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                }
+        
+                .cta-button {
+                    padding: 15px 25px;
+                    font-size: 1.1rem;
+                    border: 2px solid #007bff;
+                    background-color: white;
+                    color: #007bff;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    text-align: center;
+                    min-height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+        
+                .cta-button.active {
+                    background-color: #007bff;
+                    color: white;
+                }
     
         @media (max-width: 768px) {
             .header .container {
