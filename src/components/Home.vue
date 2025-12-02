@@ -82,17 +82,62 @@ export default {
                 </div>
             </section>
             <section class="cta">
-                <div class="container">
-                    <h2>Выберите интересующий Вас раздел:</h2>
-                    <div class="cta-buttons">
-                        <button class="cta-button" :class="{ active: selectedSection === 'photo' }"
-                            @click="selectedSection = 'photo'">
-                            Фотосъёмка
-                        </button>
-                        <button class="cta-button" :class="{ active: selectedSection === 'video' }"
-                            @click="selectedSection = 'video'">
-                            Видеосъёмка
-                        </button>
+                <div class="content">
+                    <div class="subtitle">Выберите интересующий<br>Вас раздел:</div>
+                </div>
+                <div class="other-buttons">
+                    <button class="gradient-btn">ФОТОСЪЁМКА</button>
+                    <button class="gradient-btn">ВИДЕОСЪЁМКА</button>
+                </div>
+            </section>
+
+
+
+            <section class="specialists-section">
+                <!-- Заголовок -->
+                <h2 class="section-title">НАШИ СПЕЦИАЛИСТЫ</h2>
+                <div class="divider">
+                </div>
+
+                <div class="s-cards-container">
+                    <!-- Специалист 1: ДЭРРИЛ САЙПС -->
+                    <div class="s-card">
+                        <div class="s-image-frame">
+                            <img src="../assets/images/specialist-1.png" alt="ДЭРРИЛ САЙПС" class="s-image" />
+                        </div>
+                        <h3 class="s-name">ДЭРРИЛ САЙПС</h3>
+                        <p class="s-tagline">ЗАХВАТЫВАЮЩИЕ ФОТОГРАФИИ И ДИНАМИЧНЫЕ ВИДЕО ДЛЯ ВАШИХ САМЫХ ЯРКИХ
+                            СОБЫТИЙ</p>
+                        <p class="s-description">Дэррил – мастер ловить лучшие моменты! Он создает незабываемые
+                            снимки и захватывающие видеоролики для любых мероприятий – от семейных торжеств до
+                            крупных корпоративов. Его талант позволяет запечатлеть искренние эмоции, важные детали и
+                            волнующие мгновения, чтобы вы могли их снова переживать.</p>
+                    </div>
+
+                    <!-- Специалист 2: РУБИ СПАРК -->
+                    <div class="s-card">
+                        <div class="s-image-frame">
+                            <img src="../assets/images/specialist-2.png" alt="РУБИ СПАРК" class="s-image" />
+                        </div>
+                        <h3 class="s-name">РУБИ СПАРК</h3>
+                        <p class="s-tagline">ПРОФЕССИОНАЛЬНОЕ ФОТО И ВИДЕО ДЛЯ ВАШЕГО БИЗНЕСА И НЕДВИЖИМОСТИ</p>
+                        <p class="s-description">Руби – эксперт в создании эффективного визуального контента для
+                            привлечения клиентов и увеличения продаж. Она специализируется на бизнес-рекламе и
+                            съемке недвижимости, помогая вам выгодно представить свои товары и услуги.</p>
+                    </div>
+
+                    <!-- Специалист 3: АЛЕКСАНДРА ВАЛЬТЕР -->
+                    <div class="s-card">
+                        <div class="s-image-frame">
+                            <img src="../assets/images/specialist-3.png" alt="АЛЕКСАНДРА ВАЛЬТЕР" class="s-image" />
+                        </div>
+                        <h3 class="s-name">АЛЕКСАНДРА ВАЛЬТЕР</h3>
+                        <p class="s-tagline">ЧУВСТВУЕТ ВАШИ ЭМОЦИИ, СОЗДАЕТ ФОТО И ВИДЕО ОТРАЖАЮЩИЕ ВАШУ
+                            УНИКАЛЬНОСТЬ</p>
+                        <p class="s-description">Александра – эксперт в создании элегантных образов и раскрытии
+                            индивидуальности в каждом кадре. Она тонко чувствует ваши эмоции и мастерски переносит
+                            их на камеру, создавая фото и видео, которые по-настоящему отражают вашу уникальность.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -180,63 +225,254 @@ export default {
 
         .hero {
             color: rgb(0, 0, 0);
-            padding: 3rem 0;
+            padding: 1rem 0;    
         }
         
         .hero-text {
             font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             text-align: center;
             max-width: 650px;
             margin-left: auto;
             margin-right: auto;
         }
+
+
         .hero-text img{
             padding: 35px 0px;
         }
+/* Выберите раздел - текст */                
                 .cta {
                     text-align: center;
-                    padding: 20px;
                 }
-        
-                .cta h2 {
-                    font-size: 2rem;
-                    margin-bottom: 2rem;
+
+                .subtitle{
+                    font-size: 1.7rem;
                     color: #000000;
-                    line-height: 1.4;
-                    max-width: 450px;
-                    text-align: center;
                 }
-        
-                .cta-buttons {
-                    display: flex;
-                    justify-content: center;
-                    gap: 1rem;
-                    flex-wrap: wrap;
+
+
+                .other-buttons{
+                    margin-top: 6px;
                 }
-        
-                .cta-button {
-                    padding: 15px 25px;
-                    font-size: 1.1rem;
-                    border: 2px solid #007bff;
-                    background-color: white;
-                    color: #007bff;
-                    border-radius: 8px;
+                
+                .gradient-btn {
+                    padding: 12px 0;
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #000000;
+                    background: linear-gradient(135deg,
+                            #957062,
+                            #FFB194,
+                            #957062);
+                    border: none;
+                    border-radius: 18px;
                     cursor: pointer;
+                    text-transform: uppercase;
                     transition: all 0.3s ease;
-                    text-align: center;
-                    min-height: 60px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: column;
+                    font-family: Arial, sans-serif;
+                    letter-spacing: 1px;
+                    box-shadow:
+                        0 4px 15px #957062,
+                        0 1px 3px rgba(0, 0, 0, 0.2);
+                    position: relative;
+                    overflow: hidden;
+                    margin: 10px;
+                    min-width: 200px;
                 }
-        
-                .cta-button.active {
-                    background-color: #007bff;
-                    color: white;
-                }
-    
+
+
+/* СПециалисты */
+
+
+.specialists-section {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    margin: 0 auto 40px;
+}
+
+.specialists-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    position: relative;
+}
+
+.specialists-container::before,
+.specialists-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #ddd;
+}
+
+.specialists-container::before {
+    left: calc(33.333% - 15px);
+}
+
+.specialists-container::after {
+    right: calc(33.333% - 15px);
+}
+
+.specialist-card {
+    padding: 0 15px;
+    text-align: left;
+}
+
+.specialist-name {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #000;
+    line-height: 1.3;
+}
+
+.specialist-tagline {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.specialist-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+}
+
+/* специалисты */
+.s-section-wrapper {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #fff;
+}
+
+.s-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.s-card {
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.s-image-frame {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border: 2px solid #000000;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.s-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.s-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.s-tagline {
+    font-size: 0.9em;
+    color: #777;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+
+.s-description {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+}
+
+@media (max-width: 1024px) {
+    .s-card {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .s-section-wrapper {
+        padding: 15px;
+    }
+
+    .s-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .s-section-title {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .s-nav-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+
+    .s-nav-button {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+
         @media (max-width: 768px) {
             .header .container {
                 flex-direction: column;
