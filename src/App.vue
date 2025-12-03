@@ -1,6 +1,8 @@
 <script setup>
 // Вставляем это для этого: Импортируем наш компонент навигации, чтобы использовать его здесь.
 import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+
 </script>
 
 <template>
@@ -17,6 +19,12 @@ import Header from './components/Header.vue';
             <router-view />
         </main>
 
+
+        <footer>
+
+        <Footer />
+    
+        </footer>
         <!-- Вставляем это для этого: Футер, который также будет виден на всех страницах -->
         <!-- <footer class="app-footer">
             <p>&copy; {{ new Date().getFullYear() }} Capture Studio. Все права защищены.</p>
