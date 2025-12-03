@@ -141,6 +141,42 @@ export default {
                     </div>
                 </div>
             </section>
+            <!-- Наши лучшие работы  -->
+            <section>
+                <div class="portfolio-section">
+                    <h2>Наши лучшие работы</h2>
+
+                    <!-- Контейнеры для линий -->
+
+                    <div class="gallery-center-line"><img src="../assets/images/line.png" alt="Линия">
+                    </div>
+
+
+                    <div class=" gallery-grid">
+                        <div class="grid-item item-1">
+                            <img src="../assets/images/best-work-1.jpg" alt="Силуэты девушек на закате">
+                        </div>
+                        <div class="grid-item item-2">
+                            <img src="../assets/images/best-work-2.jpg" alt="Поцелуй молодоженов">
+                        </div>
+                        <div class="grid-item item-3">
+                            <img src="../assets/images/best-work-3.jpg" alt="Мужчина с камерой на фоне взрыва">
+                        </div>
+                        <div class="grid-item item-4">
+                            <img src="../assets/images/best-work-4.jpg" alt="Групповое фото людей">
+                        </div>
+                        <div class="grid-item item-5">
+                            <img src="../assets/images/best-work-5.jpg" alt="Торт на вечеринке">
+                        </div>
+                        <div class="grid-item item-6">
+                            <img src="../assets/images/best-work-6.jpg" alt="Человек в синем свете">
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
         </main>
     </div>
 </template>
@@ -154,6 +190,7 @@ export default {
       margin: 0;
        padding: 0;
        box-sizing: border-box;
+       font-family: Arial, sans-serif;
     }
     
     .hero-section {
@@ -288,12 +325,12 @@ export default {
 .specialists-section {
     font-family: Arial, sans-serif;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 20px;
 }
 
 .section-title {
-    font-size: 32px;
+    font-size: 2em;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
@@ -366,7 +403,6 @@ export default {
 
 /* специалисты */
 .s-section-wrapper {
-    font-family: Arial, sans-serif;
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
@@ -435,6 +471,88 @@ export default {
     line-height: 1.6;
     margin: 0;
     flex-grow: 1;
+}
+
+
+
+/* наши лучшие работы */
+
+
+
+.portfolio-section {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    position: relative;
+}
+
+h2 {
+    font-size: 2.4em;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-areas:
+        "item1 item1 item2"
+        "item3 item4 item4"
+        "item3 item5 item6";
+    grid-template-columns: 1.5fr 1.2fr 1fr;
+    grid-auto-rows: minmax(180px, auto);
+    gap: 15px;
+}
+
+.grid-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.item-1 {
+    grid-area: item1;
+}
+
+.item-2 {
+    grid-area: item2;
+}
+
+.item-3 {
+    grid-area: item3;
+}
+
+.item-4 {
+    grid-area: item4;
+}
+
+.item-5 {
+    grid-area: item5;
+}
+
+.item-6 {
+    grid-area: item6;
+}
+
+/* --- Стили для одной линии по центру --- */
+.gallery-center-line {
+    position: absolute;
+    left: -300px;
+    top: 300px;
+    z-index: -1;
+    /* Линия будет располагаться под элементами галереи */
 }
 
 @media (max-width: 1024px) {
