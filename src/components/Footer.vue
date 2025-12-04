@@ -8,19 +8,19 @@ export default {
     <footer class="app-footer">
         <div class="footer-content">
             <!-- Колонка 1: Логотип и основные ссылки -->
-            <div class="footer-section brand-info">
+            <div class="footer-section">
                 <h2 class="brand-logo-1">CAPTURE</h2>
                 <h2 class="brand-logo-2">STUDIO</h2>
                 <nav class="footer-nav-links">
                     <ul>
-                        <li><a href="#">Правила студии</a></li>
+                        <li class="footer-nav-links-p"><a href="#">Правила студии</a></li>
                         <li><a href="#">Политика конфиденциальности</a></li>
                     </ul>
                 </nav>
             </div>
 
             <!-- Колонка 2: Навигация -->
-            <div class="footer-section navigation-links">
+            <div class="footer-section">
                 <h3>НАВИГАЦИЯ</h3>
                 <nav class="footer-nav-links">
                     <ul>
@@ -65,16 +65,15 @@ export default {
     font-family: "ProtestRevolution-Regular";
     src: url(../src/assets/fonts/ProtestRevolution-Regular.ttf);
 }
+
+
 .app-footer {
     margin-top: 65px;
-    background-color: #262626;
-    /* Темный фон, как на фото */
+    background-color: #1b1b1b;
     color: #cccccc;
-    /* Светло-серый текст */
-    padding: 40px 0;
-    /* Отступы сверху и снизу */
+    padding-top: 40px;
+    padding-bottom: 24px;
     font-family: 'Arial', sans-serif;
-    /* Общий шрифт, можно изменить */
     line-height: 1.6;
     /* Межстрочный интервал */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
@@ -89,31 +88,35 @@ export default {
     /* Максимальная ширина контента */
     margin: 0 auto;
     /* Центрируем футер */
-    padding: 0 20px;
+    padding: 10px 90px;
     /* Горизонтальные отступы для адаптивности */
-    gap: 40px;
+    gap: 60px;
     /* Отступ между колонками */
 }
 .footer-section {
-    flex: 1;
+    /* flex: 1; */
     /* Каждая колонка занимает равное пространство */
-    min-width: 200px;
+    min-width: 20px;
     /* Минимальная ширина для колонок */
 }
 
 .brand-logo-1, .brand-logo-2 {
     font-family: "ProtestRevolution-Regular";
     line-height: 16px;
-    max-width: 20px;
-    text-align: right;
     font-size: 2.3em;
     font-weight: bold;
     color: #ffffff;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     letter-spacing: 1.1;
     /* Небольшой отступ между буквами */
     text-transform: uppercase;
     /* Для более точного совпадения нужен кастомный шрифт */
+}
+
+.brand-logo-2 {
+    padding-left: 25px;
+    padding-bottom: 12px;
+    /* Отступ для "STUDIO", чтобы оно выглядело как на фото */
 }
 
 h3 {
@@ -125,6 +128,14 @@ h3 {
     text-transform: uppercase;
 }
 
+
+/* между навигацией и текстом */
+
+/* .footer-nav-links{
+    padding-top: px;
+} */
+ /* footer-nav-links-p */
+
 .footer-nav-links ul {
     list-style: none;
     /* Убираем маркеры списка */
@@ -133,7 +144,7 @@ h3 {
 }
 
 .footer-nav-links li {
-    margin-bottom: 10px;
+    margin-bottom: 7px;
     /* Отступ между пунктами списка */
 }
 
@@ -170,7 +181,7 @@ h3 {
     /* Для расположения иконки и текста в одну строку */
     align-items: center;
     /* Выравнивание по центру по вертикали */
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .contact-item i {
@@ -183,7 +194,7 @@ h3 {
 
 .social-icons {
     display: flex;
-    margin-top: 20px;
+    padding-top: 6px;
     gap: 15px;
     /* Отступ между иконками соцсетей */
 }
